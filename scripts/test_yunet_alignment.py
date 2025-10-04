@@ -165,8 +165,8 @@ def main():
     print("   2. aligned_with_bbox.jpg     - New method (NO background!)")
     print("   3. alignment_with_bbox_viz.png - Visual comparison")
     print()
-    print("🎯 The 'aligned_with_bbox.jpg' file is the clean 160×160 face")
-    print("   ready for FaceNet embedding generation!")
+    print("🎯 The 'aligned_with_bbox.jpg' file is the clean 112×112 face")
+    print("   ready for MobileFaceNet embedding generation!")
     print()
 
 if __name__ == "__main__":

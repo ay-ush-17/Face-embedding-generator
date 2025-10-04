@@ -1,18 +1,28 @@
 """
-Face Alignment Module for FaceNet
-==================================
+Face Alignment Module for MobileFaceNet
+========================================
 
 This module provides face alignment functions to transform raw YuNet detection
-output into properly aligned 160x160 input required by MobileFaceNet/FaceNet.
+outp    # STEP 2: Convert from BGR (OpenCV default) to RGB (MobileFaceNet required)
+    aligned_face_array = cv2.cvtColor(aligned_face_array, cv2.COLOR_BGR2RGB)
+    
+    # STEP 3: Apply pre-whitening normalization
+    prewhitened_face = pre_whiten(aligned_face_array)
+    
+    # STEP 4: Add batch dimension [1, 112, 112, 3]
+    # MobileFaceNet expects input shape: (batch_size, height, width, channels)
+    return np.expand_dims(prewhitened_face, axis=0)roperly aligned 112×112 input required by MobileFaceNet.
 
 The alignment process:
 1. Calculates rotation angle to make eyes horizontal
-2. Computes scale factor based on eye distance
+2. Computes scale fac    axes[1].imshow(aligned_face)
+    axes[1].set_title('Aligned Face (112×112)', fontsize=12, fontweight='bold')
+    axes[1].axis('off') based on eye distance
 3. Applies affine transformation to align and crop face
-4. Applies FaceNet-specific pre-whitening normalization
+4. Applies pre-whitening normalization
 
 Author: EZ pic Face Recognition Pipeline
-Date: October 4, 2025
+Date: October 5, 2025
 """
 
 import numpy as np
@@ -23,10 +33,10 @@ import os
 
 # --- CONFIGURATION CONSTANTS ---
 
-# FaceNet expects 160x160 input size
-TARGET_FACE_SIZE = 160 
+# MobileFaceNet expects 112×112 input size
+TARGET_FACE_SIZE = 112 
 
-# Desired position of the LEFT eye in the final 160x160 image (Normalized to 0.0 - 1.0)
+# Desired position of the LEFT eye in the final 112×112 image (Normalized to 0.0 - 1.0)
 # Setting the eyes here guarantees the face is centered correctly.
 DESIRED_LEFT_EYE_X = 0.35 
 DESIRED_LEFT_EYE_Y = 0.35
@@ -35,7 +45,7 @@ DESIRED_LEFT_EYE_Y = 0.35
 
 def pre_whiten(x):
     """
-    Applies the standard pre-whitening required by the FaceNet model.
+    Applies the standard pre-whitening required by face recognition models.
     
     Pre-whitening normalizes the image by:
     - Subtracting the mean (centering around zero)
@@ -86,7 +96,7 @@ def get_alignment_matrix(landmarks, image_width, image_height):
     angle = np.degrees(np.arctan2(dY, dX))
 
     # 2. Calculate the Desired Scale Factor
-    # Determine the target distance between the eyes in the 160x160 image
+    # Determine the target distance between the eyes in the 112×112 image
     desired_right_eye_x = 1.0 - DESIRED_LEFT_EYE_X
     desired_distance = desired_right_eye_x * TARGET_FACE_SIZE - DESIRED_LEFT_EYE_X * TARGET_FACE_SIZE
     
@@ -102,7 +112,7 @@ def get_alignment_matrix(landmarks, image_width, image_height):
 
     # 4. Adjust Matrix for Final Translation (Centering the face)
     # Calculates how much to shift the image so the left eye lands exactly at (0.35, 0.35) 
-    # of the 160x160 target image.
+    # of the 112×112 target image.
     target_center_x = DESIRED_LEFT_EYE_X * TARGET_FACE_SIZE
     target_center_y = DESIRED_LEFT_EYE_Y * TARGET_FACE_SIZE
     
@@ -117,7 +127,7 @@ def align_and_crop(image_array, landmarks, bbox=None):
     Applies the transformation matrix M and prepares the final tensor for FaceNet.
     
     This is the main alignment function that:
-    1. If bbox provided: Directly crop bbox and resize to 160×160 (removes ALL background!)
+    1. If bbox provided: Directly crop bbox and resize to 112×112 (removes ALL background!)
     2. If bbox not provided: Use landmark-based affine transformation
     3. Converts color space (BGR -> RGB)
     4. Applies pre-whitening normalization
@@ -128,10 +138,10 @@ def align_and_crop(image_array, landmarks, bbox=None):
         landmarks: 5-point facial landmarks from YuNet detection
                    Shape: (5, 2) with format [[x,y], [x,y], ...]
         bbox: Optional (x, y, w, h) bounding box from YuNet detection
-              If provided, crops bbox to 160×160 (simple & effective - NO background!)
+              If provided, crops bbox to 112×112 (simple & effective - NO background!)
         
     Returns:
-        A pre-whitened NumPy array ready for FaceNet input with shape [1, 160, 160, 3]
+        A pre-whitened NumPy array ready for MobileFaceNet input with shape [1, 112, 112, 3]
         Values are normalized with zero mean and unit variance (pre-whitened)
     """
     
@@ -152,7 +162,7 @@ def align_and_crop(image_array, landmarks, bbox=None):
         # Crop to face bbox region
         face_crop = image_array[y1:y2, x1:x2].copy()
         
-        # Resize directly to 160×160 (this removes ALL background!)
+        # Resize directly to 112×112 (this removes ALL background!)
         aligned_face_array = cv2.resize(face_crop, (TARGET_FACE_SIZE, TARGET_FACE_SIZE), 
                                        interpolation=cv2.INTER_LINEAR)
     else:
@@ -176,8 +186,8 @@ def align_and_crop(image_array, landmarks, bbox=None):
     # STEP 3: Apply FaceNet-specific pre-whitening
     prewhitened_face = pre_whiten(aligned_face_array)
     
-    # STEP 4: Add batch dimension [1, 160, 160, 3]
-    # FaceNet expects input shape: (batch_size, height, width, channels)
+    # STEP 4: Add batch dimension [1, 112, 112, 3]
+    # MobileFaceNet expects input shape: (batch_size, height, width, channels)
     return np.expand_dims(prewhitened_face, axis=0)
 
 def align_face_simple(image_array, landmarks):
@@ -191,7 +201,7 @@ def align_face_simple(image_array, landmarks):
         landmarks: 5-point facial landmarks from YuNet detection
         
     Returns:
-        Aligned face as numpy array with shape [160, 160, 3] (RGB format)
+        Aligned face as numpy array with shape [112, 112, 3] (RGB format)
         Values are NOT pre-whitened (suitable for visualization)
     """
     h, w = image_array.shape[:2]
@@ -293,7 +303,7 @@ def visualize_alignment(original_image, landmarks, aligned_face, output_path=Non
     Args:
         original_image: Original image (BGR format from cv2.imread)
         landmarks: 5-point facial landmarks used for alignment
-        aligned_face: The aligned 160x160 face (RGB format, can be pre-whitened or not)
+        aligned_face: The aligned 112×112 face (RGB format, can be pre-whitened or not)
         output_path: Optional path to save the visualization. If None, displays with plt.show()
         bbox: Optional (x, y, w, h) bounding box to show crop region
         
@@ -373,9 +383,9 @@ def visualize_alignment(original_image, landmarks, aligned_face, output_path=Non
     
     plt.close()
 
-def visualize_aligned_face_only(aligned_face, output_path=None, title="Aligned Face (160×160)"):
+def visualize_aligned_face_only(aligned_face, output_path=None, title="Aligned Face (112×112)"):
     """
-    Simple visualization showing just the aligned 160×160 face.
+    Simple visualization showing just the aligned 112×112 face.
     
     Args:
         aligned_face: The aligned face (can be pre-whitened or uint8)
@@ -504,7 +514,7 @@ if __name__ == "__main__":
         
         # Align the face
         aligned_face = align_face_simple(test_image, test_landmarks_scaled)
-        print(f"✅ Face aligned to 160×160")
+        print(f"✅ Face aligned to 112×112")
         
         # Create output directory
         os.makedirs(output_dir, exist_ok=True)
@@ -514,7 +524,7 @@ if __name__ == "__main__":
         visualize_alignment(test_image, test_landmarks_scaled, aligned_face, viz_path)
         
         # Save aligned face only
-        aligned_path = os.path.join(output_dir, "aligned_face_160x160.jpg")
+        aligned_path = os.path.join(output_dir, "aligned_face_112x112.jpg")
         save_aligned_face(aligned_face, aligned_path)
         
         print(f"\n📁 Outputs saved to: {output_dir}")
