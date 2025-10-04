@@ -64,14 +64,41 @@ EZ pic/
 ```bash
 python trial_script.py
 ```
-This provides an interactive menu to run different parts of the project.
+This provides an interactive menu with options:
+1. **Basic embedding generation** (org_trial_script.py)
+2. **Embedding + visualization** (embedding_visualizer.py) 
+3. **🚀 HYBRID pipeline** (ezpic_hybrid_pipeline.py) - **RECOMMENDED**
+4. **Sequential execution** (both scripts)
+
+### 🚀 **NEW: EzPic Hybrid Strategy**
+The hybrid pipeline implements the optimal face processing strategy:
+
+| Step | Method | Purpose | Performance |
+|------|--------|---------|-------------|
+| 1. Detection | **BlazeFace/MediaPipe** | Fast face location + landmarks | ~10-20ms |
+| 2. Alignment | **MTCNN Math** (CPU only) | Perfect face alignment | ~1-2ms |
+| 3. Embedding | **FaceNet** | 512D face vector | ~30-50ms |
+| **Total** | **Hybrid Pipeline** | **Complete processing** | **~50-70ms** ✅ |
+
+**Target: Sub-100ms processing for real-time applications**
 
 ### Manual Usage
 ```bash
 cd scripts
-python org_trial_script.py              # Generate embeddings only
-python embedding_visualizer.py          # Create visualizations
+python org_trial_script.py              # Basic: Pre-processed images → FaceNet
+python embedding_visualizer.py          # Visualization of embeddings
+python ezpic_hybrid_pipeline.py         # HYBRID: Full detection + alignment + embedding
 ```
+
+### 📊 **Processing Approaches Comparison**
+
+| Approach | Speed | Accuracy | Use Case |
+|----------|--------|----------|-----------|
+| **Original** (org_trial_script.py) | Fast | High* | Pre-cropped faces |
+| **Hybrid** (ezpic_hybrid_pipeline.py) | **Fastest** | **Highest** | **Real-time applications** |
+| **Visualization** (embedding_visualizer.py) | Medium | High | Analysis & debugging |
+
+*Requires manual face cropping and alignment
 
 ### What the scripts do:
 - **org_trial_script.py**: Loads the FaceNet model and generates 512D face embeddings
