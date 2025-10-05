@@ -1,0 +1,19 @@
+{
+    "timestamp": "2025-10-05 18:18:31",
+    "total_pairs": 1000,
+    "successful_pairs": 1000,
+    "failed_pairs": 0,
+    "optimal_threshold": 1.2500000000000007,
+    "accuracy": 0.952,
+    "precision": 0.9891774891774892,
+    "recall": 0.914,
+    "roc_auc": 0.9680759999999999,
+    "same_mean_dist": 1.0171778202056885,
+    "same_std_dist": 0.1625133901834488,
+    "diff_mean_dist": 1.387235403060913,
+    "diff_std_dist": 0.046018511056900024,
+    "models": {
+        "yunet": "d:\\MY WORK\\EZ pic\\models\\face_detection_yunet_2023mar_int8.onnx",
+        "arcface": "d:\\MY WORK\\EZ pic\\models\\w600k_r50.onnx"
+    }
+}

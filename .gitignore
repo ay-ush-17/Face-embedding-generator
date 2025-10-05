@@ -1,0 +1,25 @@
+# Large model files (keep locally, don't commit)
+models/20180402-114759.zip
+models/w600k_r50.onnx
+models/model-20180402-114759.ckpt-275.data-00000-of-00001
+images/archive.zip
+images/cplfw.zip
+
+# Large files and datasets
+*.zip
+models/*.onnx
+models/*.data-*
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Output files
+outputs/
+output/
+
+# Virtual environment
+venv/
+env/
+.venv/

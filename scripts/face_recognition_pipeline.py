@@ -1,13 +1,9 @@
 """
-OpenCV + MTCNN + FaceNet Face Recognition Pipeline
-=================================================
+Simple OpenCV + FaceNet Pipeline
+================================
 
-A reliable face recognition pipeline using:
-- OpenCV Haar Cascade for robust face detection
-- MTCNN template-based alignment for high-quality face normalization  
-- FaceNet for 512-dimensional face embeddings
-
-Tested and validated on multiple face images with excellent results.
+This uses OpenCV's reliable Haar Cascade for face detection,
+completely bypassing BlazeFace and MTCNN compatibility issues.
 """
 
 import cv2
@@ -19,14 +15,14 @@ from typing import Optional, Tuple, Dict
 import matplotlib.pyplot as plt
 
 
-class FaceRecognitionPipeline:
+class SimpleOpenCVPipeline:
     """
-    Production-ready face recognition pipeline using OpenCV + MTCNN + FaceNet
+    Simple OpenCV Haar Cascade + FaceNet pipeline
     """
     
     def __init__(self, facenet_path: str):
-        print("✨ Initializing Face Recognition Pipeline...")
-        print("🎯 Using OpenCV Haar Cascade + MTCNN + FaceNet")
+        print("✨ Initializing SIMPLE & RELIABLE Pipeline...")
+        print("🎯 Using OpenCV Haar Cascade (proven method)")
         
         # OpenCV Haar Cascade setup
         cascade_path = cv2.data.haarcascades + 'haarcascade_frontalface_default.xml'
@@ -46,7 +42,7 @@ class FaceRecognitionPipeline:
             [41.5493, 92.3655], [70.7299, 92.2041]
         ], dtype=np.float32)
         
-        print("✨ Face Recognition Pipeline ready!")
+        print("✨ SIMPLE pipeline ready!")
     
     def _setup_facenet(self, facenet_path: str):
         """Setup FaceNet"""
@@ -122,7 +118,7 @@ class FaceRecognitionPipeline:
         
         confidence = 1.0  # OpenCV doesn't provide confidence scores
         
-        print(f"✨ OpenCV Detection:")
+        print(f"✨ Simple OpenCV Detection:")
         print(f"   Confidence: {confidence:.3f} (reliable)")
         print(f"   Bbox: ({x1},{y1})-({x2},{y2}) = {width}x{height}")
         print(f"   Face coverage: {(width*height)/(w*h)*100:.1f}% of image")
@@ -144,7 +140,7 @@ class FaceRecognitionPipeline:
         # Scale template for 160x160 output
         template = self.mtcnn_template * (160 / 112.0)
         
-        print(f"📐 MTCNN Alignment:")
+        print(f"📐 Simple Alignment:")
         print(f"   Landmarks: {landmarks.shape}")
         print(f"   Template: {template.shape}")
         
@@ -263,9 +259,9 @@ class FaceRecognitionPipeline:
         
         return embedding, embedding_time
     
-    def process_image(self, image_path: str) -> Optional[Dict]:
+    def process_image_simple(self, image_path: str) -> Optional[Dict]:
         """Run the simple OpenCV + FaceNet pipeline"""
-        print(f"\n✨ Face Recognition Pipeline")
+        print(f"\n✨ SIMPLE & RELIABLE Pipeline")
         print(f"📁 Processing: {os.path.basename(image_path)}")
         print(f"🎯 OpenCV Haar Cascade + MTCNN Alignment + FaceNet")
         print("=" * 70)
@@ -293,23 +289,22 @@ class FaceRecognitionPipeline:
         
         total_time = (time.time() - total_start) * 1000
         
-        # Save results with image-specific names
-        output_dir = 'outputs'
+        # Save results
+        output_dir = '../outputs'
         os.makedirs(output_dir, exist_ok=True)
         
-        image_name = os.path.splitext(os.path.basename(image_path))[0]
-        cv2.imwrite(os.path.join(output_dir, f'aligned_face_{image_name}.jpg'), aligned_face)
+        cv2.imwrite(os.path.join(output_dir, 'aligned_face_SIMPLE_OPENCV.jpg'), aligned_face)
         
         # Create visualization
-        self._create_visualization(image, detection, aligned_face, embedding,
-                                 alignment_time, embedding_time, total_time, output_dir, image_name)
+        self._create_simple_visualization(image, detection, aligned_face, embedding,
+                                        alignment_time, embedding_time, total_time, output_dir)
         
         # Results summary
         bbox_width = detection['bbox'][2] - detection['bbox'][0]
         bbox_height = detection['bbox'][3] - detection['bbox'][1]
         aligned_pixels = np.count_nonzero(aligned_face)
         
-        print(f"\n✨ FACE RECOGNITION RESULTS:")
+        print(f"\n✨ SIMPLE OPENCV RESULTS:")
         print(f"⏱️  Total time: {total_time:.1f}ms")
         print(f"🎯 Detection: {detection['detection_time']:.1f}ms") 
         print(f"📐 Alignment: {alignment_time:.1f}ms")
@@ -336,9 +331,9 @@ class FaceRecognitionPipeline:
             'quality_score': coverage
         }
     
-    def _create_visualization(self, original_image, detection, aligned_face, embedding,
-                            alignment_time, embedding_time, total_time, output_dir, image_name):
-        """Create pipeline visualization"""
+    def _create_simple_visualization(self, original_image, detection, aligned_face, embedding,
+                                   alignment_time, embedding_time, total_time, output_dir):
+        """Create simple pipeline visualization"""
         fig, axes = plt.subplots(2, 3, figsize=(18, 12))
         
         # Original with detection
@@ -351,13 +346,13 @@ class FaceRecognitionPipeline:
                                          fill=False, color='forestgreen', linewidth=4))
         axes[0, 0].scatter(detection['landmarks'][:, 0], detection['landmarks'][:, 1], 
                           c='lime', s=120, edgecolors='darkgreen', linewidth=3)
-        axes[0, 0].set_title('Original + OpenCV Detection', fontsize=14, fontweight='bold')
+        axes[0, 0].set_title('Original + Simple OpenCV Detection', fontsize=14, fontweight='bold')
         axes[0, 0].axis('off')
         
         # Aligned face
         aligned_rgb = cv2.cvtColor(aligned_face, cv2.COLOR_BGR2RGB)
         axes[0, 1].imshow(aligned_rgb)
-        axes[0, 1].set_title('MTCNN Aligned Face', fontsize=14, fontweight='bold')
+        axes[0, 1].set_title('Simple OpenCV Aligned Face', fontsize=14, fontweight='bold')
         axes[0, 1].axis('off')
         
         # Template overlay
@@ -387,7 +382,7 @@ class FaceRecognitionPipeline:
         coverage = aligned_pixels / (160 * 160) * 100
         
         stats_text = f"""
-OpenCV + MTCNN + FaceNet Pipeline
+Simple OpenCV + FaceNet
 
 Detection: {detection['detection_time']:.1f}ms
 Alignment: {alignment_time:.1f}ms  
@@ -399,8 +394,8 @@ Bbox: {bbox_width}x{bbox_height}
 Aligned: {aligned_pixels:,} pixels
 Coverage: {coverage:.1f}%
 
-Image: {image_name}
-Status: Production Ready
+Method: Haar Cascade + MTCNN Template
+Status: Simple & Reliable
         """
         
         axes[1, 2].text(0.05, 0.95, stats_text, transform=axes[1, 2].transAxes,
@@ -410,50 +405,33 @@ Status: Production Ready
         axes[1, 2].set_ylim(0, 1)
         axes[1, 2].axis('off')
         
-        plt.suptitle(f'Face Recognition Pipeline - {image_name}', 
+        plt.suptitle('Simple OpenCV Face Detection + FaceNet Pipeline', 
                      fontsize=16, fontweight='bold')
         plt.tight_layout()
-        plt.savefig(os.path.join(output_dir, f'pipeline_results_{image_name}.png'), 
+        plt.savefig(os.path.join(output_dir, 'SIMPLE_OPENCV_results.png'), 
                    dpi=150, bbox_inches='tight')
         plt.close()
         
-        print(f"📊 Pipeline visualization created: pipeline_results_{image_name}.png")
+        print("📊 Simple OpenCV visualization created!")
 
 
 def main():
-    """Run the face recognition pipeline on sample2.jpg and sample 3.jpg"""
+    """Run the simple OpenCV pipeline"""
     try:
-        processor = FaceRecognitionPipeline("models/20180402-114759.pb")
+        processor = SimpleOpenCVPipeline("../models/20180402-114759.pb")
         
-        # Process sample2.jpg
-        print("\n" + "="*70)
-        print("🎯 PROCESSING SAMPLE2.JPG")
-        print("="*70)
-        result2 = processor.process_image("images/sample2.jpg")
+        result = processor.process_image_simple("../images/sample2.jpg")
         
-        # Process sample 3.jpg  
-        print("\n" + "="*70)
-        print("🎯 PROCESSING SAMPLE 3.JPG")
-        print("="*70)
-        result3 = processor.process_image("images/sample 3.jpg")
-        
-        # Summary
-        print("\n" + "="*70)
-        print("� FACE RECOGNITION PIPELINE SUMMARY")
-        print("="*70)
-        
-        if result2 and result2['success']:
-            print(f"✅ sample2.jpg: Quality {result2['quality_score']:.1f}%")
-        else:
-            print("❌ sample2.jpg: Processing failed")
+        if result and result['success']:
+            print(f"\n✨ SIMPLE OPENCV PIPELINE COMPLETE!")
+            print(f"✅ OpenCV Haar Cascade provides reliable detection")
+            print(f"🎯 Check SIMPLE_OPENCV_results.png for complete visualization")
+            print(f"📸 aligned_face_SIMPLE_OPENCV.jpg shows alignment quality")
+            print(f"🏆 Quality score: {result['quality_score']:.1f}%")
+            print(f"\n💡 This completely bypasses BlazeFace issues!")
             
-        if result3 and result3['success']:
-            print(f"✅ sample 3.jpg: Quality {result3['quality_score']:.1f}%")
         else:
-            print("❌ sample 3.jpg: Processing failed")
-            
-        print("\n🎯 Check outputs folder for visualization results!")
-        print("📸 OpenCV + MTCNN + FaceNet pipeline working perfectly!")
+            print("❌ Simple OpenCV pipeline failed")
             
     except Exception as e:
         print(f"❌ Error: {e}")

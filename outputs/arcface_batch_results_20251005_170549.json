@@ -1,0 +1,571 @@
+{
+  "test_date": "2025-10-05T17:05:59.740987",
+  "reference_image": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0101.jpg",
+  "test_images": [
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0101.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0102.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0103.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0104.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0105.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0106.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0107.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0108.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0109.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0110.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0111.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0112.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0113.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0114.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0115.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0116.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0117.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0118.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0119.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0120.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0121.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0122.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0123.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0124.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0125.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0126.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0127.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0128.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0129.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0130.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0131.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0132.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0133.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0134.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0135.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0136.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0137.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0138.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0139.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0140.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0141.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0142.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0143.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0144.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0145.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0146.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0147.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0148.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0149.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0150.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0151.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0152.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0153.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0154.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0155.jpg",
+    "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0156.jpg"
+  ],
+  "threshold": 0.2,
+  "total_images": 56,
+  "matches": 17,
+  "results": [
+    {
+      "filename": "IMG-20251005-WA0101.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0101.jpg",
+      "similarity": 1.0,
+      "distance": 0.0,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0102.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0102.jpg",
+      "similarity": 0.11938050389289856,
+      "distance": 1.327116847038269,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9116947650909424
+    },
+    {
+      "filename": "IMG-20251005-WA0103.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0103.jpg",
+      "similarity": 0.13739927113056183,
+      "distance": 1.3134692907333374,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0104.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0104.jpg",
+      "similarity": 0.0,
+      "distance": 1.437764048576355,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9074580073356628
+    },
+    {
+      "filename": "IMG-20251005-WA0105.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0105.jpg",
+      "similarity": 0.051001839339733124,
+      "distance": 1.3776777982711792,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9096932411193848
+    },
+    {
+      "filename": "IMG-20251005-WA0106.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0106.jpg",
+      "similarity": 0.12069740891456604,
+      "distance": 1.3261241912841797,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0107.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0107.jpg",
+      "similarity": 0.696900486946106,
+      "distance": 0.7785879373550415,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0108.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0108.jpg",
+      "similarity": 0.059140972793102264,
+      "distance": 1.3717572689056396,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0109.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0109.jpg",
+      "similarity": 0.0,
+      "distance": 1.414760708808899,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9276830554008484
+    },
+    {
+      "filename": "IMG-20251005-WA0110.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0110.jpg",
+      "similarity": 0.655095100402832,
+      "distance": 0.8305479884147644,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0111.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0111.jpg",
+      "similarity": 0.3831280469894409,
+      "distance": 1.110740303993225,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0112.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0112.jpg",
+      "similarity": 0.6787858009338379,
+      "distance": 0.8015164136886597,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0113.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0113.jpg",
+      "similarity": 0.03708689659833908,
+      "distance": 1.3877414464950562,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0114.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0114.jpg",
+      "similarity": 0.5396681427955627,
+      "distance": 0.9595122337341309,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0115.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0115.jpg",
+      "similarity": 0.5499677062034607,
+      "distance": 0.9487174153327942,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0116.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0116.jpg",
+      "similarity": 0.024444658309221268,
+      "distance": 1.3968216180801392,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0117.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0117.jpg",
+      "similarity": 0.42433881759643555,
+      "distance": 1.0729968547821045,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0118.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0118.jpg",
+      "similarity": 0.11516638100147247,
+      "distance": 1.3302884101867676,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0119.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0119.jpg",
+      "similarity": 0.5245913863182068,
+      "distance": 0.9750986695289612,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0120.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0120.jpg",
+      "similarity": 0.09836892038583755,
+      "distance": 1.3428560495376587,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0121.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0121.jpg",
+      "similarity": 0.008116604760289192,
+      "distance": 1.408462643623352,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9176732301712036
+    },
+    {
+      "filename": "IMG-20251005-WA0122.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0122.jpg",
+      "similarity": 0.0,
+      "distance": 1.4433410167694092,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9056769609451294
+    },
+    {
+      "filename": "IMG-20251005-WA0123.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0123.jpg",
+      "similarity": 0.05924529582262039,
+      "distance": 1.3716813325881958,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9334284067153931
+    },
+    {
+      "filename": "IMG-20251005-WA0124.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0124.jpg",
+      "similarity": 0.0825478732585907,
+      "distance": 1.3545864820480347,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9158649444580078
+    },
+    {
+      "filename": "IMG-20251005-WA0125.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0125.jpg",
+      "similarity": 0.026684997603297234,
+      "distance": 1.3952168226242065,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9094723463058472
+    },
+    {
+      "filename": "IMG-20251005-WA0126.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0126.jpg",
+      "similarity": 0.0,
+      "distance": 1.4530315399169922,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9293756484985352
+    },
+    {
+      "filename": "IMG-20251005-WA0127.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0127.jpg",
+      "similarity": 0.0,
+      "distance": 999.0,
+      "match": false,
+      "status": "No face detected",
+      "confidence": 0.0
+    },
+    {
+      "filename": "IMG-20251005-WA0128.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0128.jpg",
+      "similarity": 0.005284994840621948,
+      "distance": 1.4104715585708618,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9449964761734009
+    },
+    {
+      "filename": "IMG-20251005-WA0129.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0129.jpg",
+      "similarity": 0.09301380813121796,
+      "distance": 1.3468379974365234,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0130.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0130.jpg",
+      "similarity": 0.031792640686035156,
+      "distance": 1.39155113697052,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.923449695110321
+    },
+    {
+      "filename": "IMG-20251005-WA0131.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0131.jpg",
+      "similarity": 0.04371573030948639,
+      "distance": 1.3829565048217773,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9372186064720154
+    },
+    {
+      "filename": "IMG-20251005-WA0132.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0132.jpg",
+      "similarity": 0.07670032232999802,
+      "distance": 1.3588963747024536,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9214658737182617
+    },
+    {
+      "filename": "IMG-20251005-WA0133.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0133.jpg",
+      "similarity": 0.430614173412323,
+      "distance": 1.0671324729919434,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.9154887795448303
+    },
+    {
+      "filename": "IMG-20251005-WA0134.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0134.jpg",
+      "similarity": 0.4767347276210785,
+      "distance": 1.0230008363723755,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0135.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0135.jpg",
+      "similarity": 0.01780407503247261,
+      "distance": 1.4015676975250244,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9158649444580078
+    },
+    {
+      "filename": "IMG-20251005-WA0136.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0136.jpg",
+      "similarity": 0.5944325923919678,
+      "distance": 0.9006302356719971,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0137.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0137.jpg",
+      "similarity": 0.7358852028846741,
+      "distance": 0.7267941236495972,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0138.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0138.jpg",
+      "similarity": 0.011264961212873459,
+      "distance": 1.4062254428863525,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0139.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0139.jpg",
+      "similarity": 0.060089148581027985,
+      "distance": 1.3710658550262451,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0140.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0140.jpg",
+      "similarity": 0.0,
+      "distance": 1.4222400188446045,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9293756484985352
+    },
+    {
+      "filename": "IMG-20251005-WA0141.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0141.jpg",
+      "similarity": 0.5333555936813354,
+      "distance": 0.9660688042640686,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0142.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0142.jpg",
+      "similarity": 0.12222186475992203,
+      "distance": 1.3249740600585938,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9094723463058472
+    },
+    {
+      "filename": "IMG-20251005-WA0143.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0143.jpg",
+      "similarity": 0.04282401502132416,
+      "distance": 1.3836010694503784,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9315891265869141
+    },
+    {
+      "filename": "IMG-20251005-WA0144.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0144.jpg",
+      "similarity": 0.11754567921161652,
+      "distance": 1.3284986019134521,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9194778203964233
+    },
+    {
+      "filename": "IMG-20251005-WA0145.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0145.jpg",
+      "similarity": 0.0,
+      "distance": 1.4244929552078247,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9214658737182617
+    },
+    {
+      "filename": "IMG-20251005-WA0146.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0146.jpg",
+      "similarity": 0.5475564002990723,
+      "distance": 0.9512556791305542,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0147.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0147.jpg",
+      "similarity": 0.07819218933582306,
+      "distance": 1.3577980995178223,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8712807893753052
+    },
+    {
+      "filename": "IMG-20251005-WA0148.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0148.jpg",
+      "similarity": 0.0,
+      "distance": 1.4213221073150635,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0149.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0149.jpg",
+      "similarity": 0.15306749939918518,
+      "distance": 1.3014856576919556,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9372186064720154
+    },
+    {
+      "filename": "IMG-20251005-WA0150.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0150.jpg",
+      "similarity": 0.13265176117420197,
+      "distance": 1.317078709602356,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9056769609451294
+    },
+    {
+      "filename": "IMG-20251005-WA0151.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0151.jpg",
+      "similarity": 0.0,
+      "distance": 1.4307560920715332,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9016427397727966
+    },
+    {
+      "filename": "IMG-20251005-WA0152.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0152.jpg",
+      "similarity": 0.03402671962976456,
+      "distance": 1.3899447917938232,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9333053231239319
+    },
+    {
+      "filename": "IMG-20251005-WA0153.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0153.jpg",
+      "similarity": 0.06302808225154877,
+      "distance": 1.3689208030700684,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9255843162536621
+    },
+    {
+      "filename": "IMG-20251005-WA0154.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0154.jpg",
+      "similarity": 0.5796108245849609,
+      "distance": 0.9169397950172424,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    },
+    {
+      "filename": "IMG-20251005-WA0155.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0155.jpg",
+      "similarity": 0.059763822704553604,
+      "distance": 1.3713032007217407,
+      "match": false,
+      "status": "Success",
+      "confidence": 0.9352640509605408
+    },
+    {
+      "filename": "IMG-20251005-WA0156.jpg",
+      "path": "D:/NAVONMESH 2024/Opening & Closing/IMG-20251005-WA0156.jpg",
+      "similarity": 0.41806918382644653,
+      "distance": 1.0788242816925049,
+      "match": true,
+      "status": "Success",
+      "confidence": 0.8943767547607422
+    }
+  ]
+}
