@@ -145,11 +145,12 @@ def align_and_crop(image_array, landmarks, bbox=None):
         Values are normalized with zero mean and unit variance (pre-whitened)
     """
     
-    # STEP 1: If bbox provided, use simple bbox crop + resize (REMOVES ALL BACKGROUND!)
+    # STEP 1: Apply geometric alignment using landmarks
     if bbox is not None:
-        x, y, w, h = bbox
+        # When bbox is provided: First crop to bbox, then apply landmark alignment
+        x, y, w, h = int(bbox[0]), int(bbox[1]), int(bbox[2]), int(bbox[3])
         
-        # Add small padding to avoid cutting face edges (10% padding)
+        # Add padding to avoid cutting face edges (10% padding)
         padding_ratio = 0.1
         padding_w = int(w * padding_ratio)
         padding_h = int(h * padding_ratio)
@@ -159,14 +160,30 @@ def align_and_crop(image_array, landmarks, bbox=None):
         x2 = min(image_array.shape[1], x + w + padding_w)
         y2 = min(image_array.shape[0], y + h + padding_h)
         
-        # Crop to face bbox region
+        # Crop to face bbox region (removes background)
         face_crop = image_array[y1:y2, x1:x2].copy()
         
-        # Resize directly to 112×112 (this removes ALL background!)
-        aligned_face_array = cv2.resize(face_crop, (TARGET_FACE_SIZE, TARGET_FACE_SIZE), 
-                                       interpolation=cv2.INTER_LINEAR)
+        # Adjust landmarks to cropped coordinate space
+        adjusted_landmarks = landmarks.copy()
+        adjusted_landmarks[:, 0] -= x1
+        adjusted_landmarks[:, 1] -= y1
+        
+        # Get affine transformation matrix using adjusted landmarks
+        h_crop, w_crop = face_crop.shape[:2]
+        M = get_alignment_matrix(adjusted_landmarks, w_crop, h_crop)
+        
+        # Apply the transformation (Warp) using OpenCV
+        # This rotates, scales, and translates to align eyes horizontally
+        aligned_face_array = cv2.warpAffine(
+            face_crop, 
+            M, 
+            (TARGET_FACE_SIZE, TARGET_FACE_SIZE), 
+            flags=cv2.INTER_LINEAR,
+            borderMode=cv2.BORDER_CONSTANT,
+            borderValue=(0, 0, 0)
+        )
     else:
-        # FALLBACK: Use landmark-based affine transformation
+        # FALLBACK: Use landmark-based affine transformation on full image
         h, w = image_array.shape[:2]
         M = get_alignment_matrix(landmarks, w, h)
         
